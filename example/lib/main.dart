@@ -1,8 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_incall_manager/incall.dart';
 import 'package:flutter_incall_manager/flutter_incall_manager.dart';
 
 
@@ -18,17 +16,13 @@ class _MyAppState extends State<MyApp> {
 
   IncallManager incall = new IncallManager();
 
-
   @override
   initState() {
     super.initState();
-
     incall.checkRecordPermission();
     incall.requestRecordPermission();
     incall.start({'media':'audio', 'auto': true, 'ringback': ''});
-
   }
-
 
 
   testPlugin() async {
