@@ -612,7 +612,7 @@ public class FlutterIncallManagerPlugin implements MethodCallHandler {
       audioDevices.clear();
       updateAudioRoute();
 
-      if (!ringbackUriType.isEmpty()) {
+      if (ringbackUriType != null && !ringbackUriType.isEmpty()) {
         startRingback(ringbackUriType);
       }
     }
