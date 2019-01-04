@@ -1698,6 +1698,9 @@ public class FlutterIncallManagerPlugin implements MethodCallHandler {
    * Changes selection of the currently active audio device.
    */
   public void selectAudioDevice(AudioDevice device) {
+    if (audioDevices.isEmpty()) {
+      updateAudioDeviceState();
+    }
     if (device != AudioDevice.NONE && !audioDevices.contains(device)) {
       Log.e(TAG, "selectAudioDevice() Can not select " + device + " from available " + audioDevices);
       return;
